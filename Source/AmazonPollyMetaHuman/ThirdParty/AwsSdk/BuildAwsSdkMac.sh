@@ -5,10 +5,11 @@ SDK_REPO_DIR="$SCRIPT_DIR/aws-sdk-cpp"
 SDK_BUILD_DIR="$SDK_REPO_DIR/_build"
 SDK_INSTALL_DIR="$SDK_REPO_DIR/_install"
 MODULE_MAC_DIR="$SCRIPT_DIR/Mac"
+AWS_SDK_VERSION="1.9.0"
 
 # Clone the repo
 cd "$SCRIPT_DIR"
-git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp.git
+git clone --branch $AWS_SDK_VERSION --recurse-submodules https://github.com/aws/aws-sdk-cpp.git
 
 # Create build and install directories where we will build and install the SDK to
 cd "$SDK_REPO_DIR"
