@@ -1,3 +1,5 @@
+@ECHO OFF
+
 SET EXITCODE=0
 
 SET SCRIPT_DIR=%~dp0
@@ -5,6 +7,7 @@ SET SDK_REPO_DIR=%SCRIPT_DIR%aws-sdk-cpp\
 SET SDK_BUILD_DIR=%SDK_REPO_DIR%_build\
 SET SDK_INSTALL_DIR=%SDK_REPO_DIR%_install\
 SET MODULE_WIN64_DIR=%SCRIPT_DIR%Win64\
+SET AWS_SDK_VERSION=1.9.0
 
 @REM Find and run VsDevCmd.bat to add the msbuild command to Path
 SET VS_INSTALLPATH=
@@ -30,7 +33,7 @@ CALL "%VS_INSTALLPATH%\Common7\Tools\VsDevCmd.bat"
 @REM Clone the repo
 IF NOT EXIST "%SDK_REPO_DIR%" (
     PUSHD "%SCRIPT_DIR%"
-    git clone -c core.longpaths=true --recurse-submodules https://github.com/aws/aws-sdk-cpp.git
+    git clone -c core.longpaths=true --branch %AWS_SDK_VERSION% --recurse-submodules https://github.com/aws/aws-sdk-cpp.git
     IF %ERRORLEVEL% NEQ 0 ( POPD & GOTO FAILED )
     POPD
 

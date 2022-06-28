@@ -25,7 +25,7 @@ With Amazon Polly, you only pay for what you use. You are charged based on the n
 
 
 
-> 🛑 Before proceeding you must have Unreal Engine 4.26 or later installed as well as the Microsoft Visual Studio development tools required for UE4 C++ development (Windows) or the Xcode development tools (Mac). If you need help with these setup steps, refer to the Unreal Engine 4 documentation, especially ["Setting Up Visual Studio for Unreal Engine"](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/).
+> 🛑 Before proceeding you must have Unreal Engine 4.26 or 4.27 installed as well as the Microsoft Visual Studio development tools required for UE4 C++ development (Windows) or the Xcode development tools (Mac). If you need help with these setup steps, refer to the Unreal Engine 4 documentation, especially ["Setting Up Visual Studio for Unreal Engine"](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/VisualStudioSetup/). Disclaimer: This was only tested with Visual Studio 2019 with UE4.26, although with slight modifications to the build script it should work with Visual Studio 2022 as well. I couldn't get this to work with UE5.
 
 
 
@@ -53,7 +53,7 @@ Use the `aws configure` command to create a default profile for the AWS CLI. Be 
 
 ### 3. Compile the Polly C++ SDK
 
-> 🛑 This next step requires cmake. If you don't already have cmake installed, you can [download it here](https://cmake.org/download/). After you download cmake, launch cmake and click 'Tools' -> 'How To Install For Command Line Use' and follow one of the instructions. E.g. for Mac - One may add CMake to the PATH: PATH="/Applications/CMake.app/Contents/bin":"$PATH"
+> 🛑 This next step requires cmake and git. If you don't already have cmake installed, you can [download it here](https://cmake.org/download/). After you download cmake, launch cmake and click 'Tools' -> 'How To Install For Command Line Use' and follow one of the instructions. E.g. for Mac - One may add CMake to the PATH: PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 This project makes use of the C++ Polly API – a part of the AWS SDK for C++ – to communicate with the Polly service. We've provided scripts to automatically download and compile the appropriate binaries for you. Run one of the following scripts:
 
