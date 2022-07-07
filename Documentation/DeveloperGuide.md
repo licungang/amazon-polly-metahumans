@@ -108,13 +108,31 @@ This project includes a sample MetaHuman, Ada, but it's easy to modify the proje
 
 ### 1. Create and import a new MetaHuman
 
-Use Epic's [MetaHuman Creator](https://www.unrealengine.com/en-US/metahuman-creator) to create your MetaHuman. Then, use Quixel [Bridge](https://quixel.com/bridge) to import your new MetaHuman into this project. See the [MetaHuman Creator documentation](https://docs.metahuman.unrealengine.com/en-US/) or official tutorial videos (at the bottom of [this page](https://www.unrealengine.com/en-US/metahuman-creator)) if you need help with these steps.
+Use Epic's [MetaHuman Creator](https://www.unrealengine.com/en-US/metahuman-creator), being sure to select the "original" UE4 version, to create your MetaHuman. You will then use Quixel [Bridge](https://quixel.com/bridge) to import your new MetaHuman into the project by following these steps...
+
+Install and configure Quixel Bridge. Refer to the [MetaHuman Creator documentation (Legacy UE4 version)](https://docs.metahuman.unrealengine.com/en-US/legacy-documentation-for-metahumans-in-unreal-engine-4/) if you need help installing Quixel Bridge and the Quixel Bridge plugin for UE4.
+
+Open your Unreal Engine project if it isn't already open.
+
+In Quixel Bridge, navigate to the custom MetaHuman you would like to use. Choose "Export" to add it to the project. (If you haven't already downloaded the MetaHuman inside of Bridge you'll have to do that first.)
+
+![Export MetaHuman to project](./media/01-export_mh_to_project.jpg)
+
+After the export completes, switch back to Unreal Engine and you'll see this prompt:
+
+![File overwrite prompt](./media/02-file_overwrite_prompt.png)
+
+Note the "FROM" file path (jot it down if you have to). Close Unreal Engine, and then use Windows Explorer to copy the indicated "asset_ue/MetaHumans" folder into the project's "Content" folder, choosing to replace existing files.
+
+![Copy from export location to project folder](./media/03-copy_files.png)
+
+You can now re-open the Unreal Engine project and it will contain your custom MetaHuman, ready for the next steps below.
 
 ### 2. Assign the "Speech_AnimBP" to your MetaHuman
 
 Open the Blueprint of your MetaHuman. Example: **/Content/MetaHumans/Koda/BP_Koda**
 
-In the Components tab, select the **Face** component. Then, in the Details panel, scroll to the "Animation" section, and set the ***Anim Class*** property to "Speech_AnimBP_C".
+In the Components tab, select the **Face** component. Then, in the Details panel, scroll to the "Animation" section, and set the ***Anim Class*** property to "Speech_AnimBP".
 
 ![Assign the animation Blueprint](media/MH-assign-speech-anim-BP.png)
 
